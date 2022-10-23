@@ -27,17 +27,34 @@ var board = `
 `
 
 func main() {
-	splitted := strings.Split(board, " ")
-	fmt.Println(splitted)
-	var lna = cell{"2", "2"}
-	var lna1 = cell{"17", "11"}
-	var lna2 = cell{" ", "3"}
-	var lna3 = cell{" ", "3"}
-	var myrow = row{lna, lna1, lna2, lna3}
-	fmt.Println(myrow)
+
+	sl := strings.TrimSpace(board)
+	// splitted := strings.Split(sl, "\n")
+	// fmt.Printf("%v", splitted)
+	// rows := getRows(strings.Fields(sl))
+	cols := getCols(strings.Fields(sl))
+	fmt.Println(cols)
 
 }
+func getRows(data []string) []string {
+	newdata := []string{}
+	for i, v := range data {
+		if i < 5 {
+			fmt.Println(v)
+			newdata = append(newdata, v)
+		}
+	}
+	return newdata
 
+}
+func getCols(data []string) []string {
+	newdata := []string{}
+	for i := 0; i < len(data); i += 5 {
+		fmt.Println(data[i])
+		newdata = append(newdata, data[i])
+	}
+	return newdata
+}
 func standardizeSpaces(s string) string {
 	return strings.Join(strings.Fields(s), " ")
 }
