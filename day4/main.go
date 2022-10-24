@@ -56,18 +56,69 @@ func main() {
 }
 func checkIfWin(myboard Board, numbr []string) bool {
 	iswon := 0
+	// iterate numbers
 	for _, v := range numbr {
+		// iterate cols elements
 		for i := 0; i < len(myboard.cols); i++ {
 			if v == myboard.cols[0].elements[i] {
 				iswon++
 				if iswon == 5 {
-					myboard.cols[0].isMarked = true
+					myboard.isWon = true
 
 				}
 			}
 		}
 	}
-	return iswon == 5
+
+	for _, v := range numbr {
+		// iterate cols elements
+		for i := 0; i < len(myboard.cols); i++ {
+			if v == myboard.cols[1].elements[i] {
+				iswon++
+				if iswon == 5 {
+					myboard.isWon = true
+
+				}
+			}
+		}
+	}
+	for _, v := range numbr {
+		// iterate cols elements
+		for i := 0; i < len(myboard.cols); i++ {
+			if v == myboard.cols[2].elements[i] {
+				iswon++
+				if iswon == 5 {
+					myboard.isWon = true
+
+				}
+			}
+		}
+	}
+	for _, v := range numbr {
+		// iterate cols elements
+		for i := 0; i < len(myboard.cols); i++ {
+			if v == myboard.cols[3].elements[i] {
+				iswon++
+				if iswon == 5 {
+					myboard.isWon = true
+
+				}
+			}
+		}
+	}
+	for _, v := range numbr {
+		// iterate cols elements
+		for i := 0; i < len(myboard.cols); i++ {
+			if v == myboard.cols[4].elements[i] {
+				iswon++
+				if iswon == 5 {
+					myboard.isWon = true
+
+				}
+			}
+		}
+	}
+	return myboard.isWon
 }
 func getRow(data []string, index int) []string {
 	row := []string{}
