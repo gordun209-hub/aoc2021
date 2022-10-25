@@ -45,7 +45,9 @@ func main() {
 	for i := 0; i < len(spldd); i += 25 {
 		boarss := createBoard(spldd[i : i+25])
 		brd := checkIfWin(boarss, nmbrs)
+		fmt.Println("-------------------------")
 		fmt.Println(brd)
+		fmt.Println("-------------------------")
 		//
 	}
 	// iswonn := checkIfWin(myboard, numbr)
